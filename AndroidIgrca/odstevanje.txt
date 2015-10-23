@@ -1,0 +1,30 @@
+﻿zacetniCas = System.currentTimeMillis();//ugotovimo začetni čas
+
+//definiramo opravilo, ki bo skrbelo za odštevanje časa
+mTimeTask = new Runnable() {
+	public void run() {
+		//izračunamo trajanje igre
+		long trajanjeIgre = System.currentTimeMillis() - zacetniCas;
+		
+		//če se čas še ni iztekel samo izpišemo na tekstovni pogled 
+		//čas trajanja igre in rezultat
+		if (trajanjeIgre < TRAJANJE_IGRE) {
+			mHandlerCasa.postDelayed(this, 1000);
+			textView.setText("Preostali čas: " + Math.round((TRAJANJE_IGRE - trajanjeIgre) / 1000) + "  Število zadetkov: "+ zadetki);
+		
+		//v nasprotnem primeru uporabniku prikažemo dialog z obvestilom,
+		// da se je čas iztekel in končamo igro
+		} else {
+			
+			/**
+			 * NALOGA: VKLJUČITE KODO ZA DIALOG
+			 */
+
+		}
+
+	}
+};
+
+//sprožimo zgoraj definirano opravilo
+mHandlerCasa.removeCallbacks(mTimeTask);
+mHandlerCasa.postDelayed(mTimeTask, 0);

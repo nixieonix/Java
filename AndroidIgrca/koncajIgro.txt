@@ -1,0 +1,3 @@
+imageView.setEnabled(false); // "deaktiviramo" view s sliko
+mHandler.removeCallbacks(mUpdateTimeTask); //"sprostimo" opravili, ki smo jih uporabili za štetje časa
+mHandlerCasa.removeCallbacks(mTimeTask); 

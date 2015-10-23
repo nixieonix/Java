@@ -1,0 +1,34 @@
+generator = new Random();	//ustvarimo generator nakljucnih stevil
+
+	zadetki = 0;	//stevec zadetkov postavimo na nic
+
+	//na podlagi tezavnosti igre izracunamo cas med premiki baloncka
+	periodaPremika = OSNOVNA_PERIODA / tezavnost;
+	
+	//izpisemo rezultat na pogled za izpis teksta
+	textView.setText("Stevilo zadetkov:"+ zadetki);
+
+	//definiramo opravilo, ki bo skrbelo za neprestano premikanje baloncka v
+	//skladu z izracunanimi parametri
+	mUpdateTimeTask = new Runnable() {
+		public void run() {
+			
+			//izracunamo naslednjo x koordinato
+			int x = Math.round(generator.nextFloat()
+					* (resolucijaX - velikostSlikeX));
+			
+			//izracunamo naslednjo y koordinato
+			int y = Math
+					.round(generator.nextFloat()
+							* (resolucijaY - velikostSlikeY - textView.getHeight()));
+			//s pomocjo spreminjanja paddinga relativne postavitve na novo pozicioniramo baloncek
+			((RelativeLayout) findViewById(R.id.RelativeLayout01))
+					.setPadding(x, y, 0, 0);
+			
+			//zakasnimo naslednji premik za periodo, ki smo jo izracunali na zacetku metode
+			mHandler.postDelayed(this, periodaPremika);
+		}
+	};
+	//sprozimo zgoraj definirano opravilo
+	mHandler.removeCallbacks(mUpdateTimeTask);
+	mHandler.postDelayed(mUpdateTimeTask, 100);

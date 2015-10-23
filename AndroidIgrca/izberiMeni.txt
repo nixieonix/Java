@@ -1,0 +1,28 @@
+
+	// switch stavek z testiranjem menijske postavke,ki je bila izbrana
+	switch (item.getItemId()) {
+	case MENU_NOVA_IGRA:
+		koncajIgro();
+		zacniIgro();
+		return true;
+	
+	case MENU_TEZAVNOST_1:
+		koncajIgro();
+		tezavnost = 1;
+		zacniIgro();
+		return true;
+		
+		/*
+		 * NALOGA: DOPOLNITE ŠE S POSTAVKAMA ZA SREDNJO IN VISOKO TEŽAVNOST
+		 * 
+		 */
+	
+	case MENU_IZHOD:
+		/*
+		 * NALOGA: IGRA NAJ SE KONČA, POKLIČITE USTREZNO KODO
+		 * 
+		 */
+	
+		finish();	//ta stavek dejansko konča našo aktivnost, zato ga kličemo na koncu, ko postorimo že vse ostalo
+		return true;
+	}

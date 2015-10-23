@@ -1,0 +1,17 @@
+//'preberemo' sliko in jo shranimo v spremenljivko
+Bitmap mBitmap = BitmapFactory.decodeResource(getResources(),
+		R.drawable.balon);	
+
+//ustvarimo objekt medijskega predvajalnika		
+predvajalnik = MediaPlayer.create(this, R.raw.tada);
+
+//zaradi krajsega naslavljanja in berljivosti kode shranimo gradnike graficnega vmesnika v spremenljivke:
+imageView = ((ImageView) findViewById(R.id.ImageView01));
+textView=((TextView) findViewById(R.id.TextView01));
+
+imageView.setImageBitmap(mBitmap);	//postavimo sliko balona v pogled
+
+/******
+5. NALOGA: PRIJAVITE POSLUSALCA DOTIKA
+*/
+		

@@ -1,0 +1,10 @@
+imageView.setEnabled(true); // "aktiviramo" pogled s sliko (lahko se ga dotikamo)
+
+/**
+ * 3. NALOGA: ZACNITE PREMIKANJE BALONA
+ */		
+
+
+/**
+ * 4. NALOGA: SPROZITE CAS
+ */		

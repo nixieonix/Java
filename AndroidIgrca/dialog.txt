@@ -1,0 +1,15 @@
+AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+builder.setMessage("Igre je konec!").setCancelable(false)
+		.setNegativeButton("OK",
+				new DialogInterface.OnClickListener() {
+					public void onClick(
+							DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
+AlertDialog alert = builder.create();
+/**
+ * NALOGA: KONCAJTE IGRO
+ */
+
+alert.show();
